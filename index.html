@@ -16,7 +16,6 @@
             <a href="#seccion-habilidades" class="nav-btn">Habilidades</a>
             <a href="#seccion-sobre-mi" class="nav-btn">Sobre mí</a>
             <a href="#seccion-portfolio-dual" class="nav-btn">Proyectos y Certificados</a>
-            <!-- Botón de Modo Claro / Oscuro integrado en la barra de navegación -->
             <button id="theme-toggle" class="theme-toggle-btn" aria-label="Cambiar tema">🌙</button>
         </div>
     </nav>
@@ -31,13 +30,38 @@
                 <code>[ SCENE 01: INTRODUCCIÓN ]</code>
             </div>
 
-            <!-- ID corregido a btn-activar tal como lo tenías originalmente -->
-            <button id="btn-activar" class="btn-activar">Activar Lupa Fotográfica</button>
-
-            <!-- Imagen de fondo que se revelará detrás del título -->
-            <div id="fondo-imagen-about" class="fondo-imagen-about hidden">
-                <img src="img/PORTA (4).png" alt="Ximena Hernández" class="imagen-revelada">
-            </div>
+<button 
+    id="btn-activar" 
+    class="btn-activar"
+    style="
+        position: fixed !important;
+        bottom: 30px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999999 !important;
+        background: #ff0055 !important;
+        color: white !important;
+        border: none !important;
+        padding: 12px 25px !important;
+        border-radius: 30px !important;
+        font-family: Arial, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+    "
+>
+    Activar Lupa Fotográfica
+</button>          
+           <div id="fondo-imagen-about" class="fondo-imagen-about">
+    <img src="img/exodo.png" alt="Ximena Hernández" class="imagen-revelada">
+</div>
+<!-- FOTO QUE SIEMPRE SE VE -->
+<div class="foto-portada-visible">
+    <img src="img/PORTA (5).png" alt="Foto de portada">
+</div>
 
             <div class="main-content">
                 <div class="quote-marks">“</div>
@@ -46,7 +70,6 @@
                 <div class="pink-banner"></div>
 
                 <h1 class="title-word porta">PORTA</h1>
-                <div class="bach-badge">BACH. EN COMPUTACIÓN</div>
 
                 <h1 class="title-word folo">
                     F<span class="o-pill-horizontal"><img src="img/pildora.png" alt="O"></span><span class="l-letter-img"><img src="img/li.png" alt="L"></span><span class="final-o">O</span><span class="pink-dot"></span>
@@ -56,7 +79,6 @@
                 <div class="icon bulb-icon"><img src="img/2.png" alt="Foco con pincel"></div>
             </div>
 
-            <!-- Única Lupa Interactiva Limpia -->
             <div id="magic-magnifier" class="magic-magnifier hidden">
                 <button id="close-magnifier" class="close-magnifier">&times;</button>
                 <div class="lupa-contenido-imagen">
@@ -65,296 +87,221 @@
             </div>
         </section>
 
-        <section id="seccion-habilidades" class="portfolio-container skills-section-white">
-            <div class="scene-badge-dark">
-                <span class="dot recording"></span>
-                <code>[ SCENE 02: HABILIDADES ]</code>
-            </div>
-
-            <div class="skills-content">
-                <div class="skills-title-wrapper">
-                    <div class="skills-quote-marks-gray">
-                        <span class="q-gray">“</span><span class="q-pink">“</span>
-                    </div>
-                    <h1 class="skills-title-dark">HABILIDADES<span class="pink-dot-title"></span></h1>
-                    <div class="skills-bg-text-white">HABILIDADES</div>
-                </div>
-
-                <div class="skills-cards-container">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line><path d="M9 14l2 2 4-4"></path></svg>
-                            </div>
-                            <div class="flip-card-back">
-                                <p><span class="bold-text">Gestión</span> del tiempo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-                            </div>
-                            <div class="flip-card-back">
-                                <p><span class="bold-text">Aprendizaje</span><br>continuo</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><line x1="8" y1="9" x2="16" y2="9"></line><line x1="8" y1="13" x2="13" y2="13"></line></svg>
-                            </div>
-                            <div class="flip-card-back">
-                                <p><span class="bold-text">Comunicación</span><br>Efectiva</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <svg class="skill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                            </div>
-                            <div class="flip-card-back">
-                                <p><span class="bold-text">Creatividad</span> e<br>innovación</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================================
-     SECCIÓN SOBRE MÍ
-================================= -->
-
-<section id="seccion-sobre-mi" class="portfolio-container about-section">
-
+ <section id="seccion-habilidades" class="portfolio-container skills-section-white">
     <!-- Etiqueta de escena -->
     <div class="scene-badge-dark">
         <span class="dot recording"></span>
-        <code>[ SCENE 03: SOBRE MÍ ]</code>
+        <code>[ SCENE 02: HABILIDADES ]</code>
     </div>
 
-
-    <div class="about-content-wrapper">
-
-        <!-- ==========================
-             TARJETA DE CONTACTO
-        =========================== -->
-
-        <div class="about-left-banner">
-
-            <div class="contact-card">
-
-                <span class="contact-small-title">
-                    // CONTACTO
-                </span>
-
-                <h2>
-                    HABLEMOS
-                </h2>
-
-                <p>
-                    ¿Quieres ponerte en contacto conmigo?
-                </p>
-
-
-                <!-- WHATSAPP -->
-
-                <a
-                    href="https://wa.me/50230498694"
-                    target="_blank"
-                    class="contact-link"
-                >
-
-                    <span class="contact-icon">
-                        ☎
-                    </span>
-
-                    <span>
-                        WhatsApp
-                    </span>
-
-                </a>
-
-
-                <!-- CORREO -->
-
-                <a
-                    href="mailto:anaxihernandez09@gmail.com"
-                    class="contact-link"
-                >
-
-                    <span class="contact-icon">
-                        ✉
-                    </span>
-
-                    <span>
-                        Correo electrónico
-                    </span>
-
-                </a>
-
-
-                <!-- PÁGINA DE CONTACTO -->
-
-                <a
-                    href="contacto.html"
-                    class="contact-link"
-                >
-
-                    <span class="contact-icon">
-                        →
-                    </span>
-
-                    <span>
-                        Página de contacto
-                    </span>
-
-                </a>
-
+    <div class="skills-content">
+        <!-- Título principal con espacio adecuado -->
+        <div class="skills-title-wrapper" style="position: relative; margin-top: 30px;">
+            <div class="skills-quote-marks-gray">
+                <span class="q-gray">“</span><span class="q-pink">“</span>
             </div>
-
+            <h1 class="skills-title-dark">HABILIDADES<span class="pink-dot-title"></span></h1>
+            <div class="skills-bg-text-white">HABILIDADES</div>
         </div>
 
-
-        <!-- ==========================
-             INFORMACIÓN SOBRE MÍ
-        =========================== -->
-
-        <div class="about-right-content">
-
-            <div class="about-title-container">
-
-                <span class="about-quotes">
-                    “
-                </span>
-
-                <h2 class="about-title">
-                    SOBRE MÍ
-                    <span class="pink-dot-title"></span>
-                </h2>
-
+        <div class="skills-cards-container">
+            <!-- Tarjeta 1 -->
+            <div class="skill-card-fixed">
+                <p><span class="bold-text">Gestión del</span><br><span class="normal-text">tiempo</span></p>
             </div>
-
-
-            <p class="about-bio">
-
-                Soy <strong>Ximena Hernández</strong>, una estudiante de
-Bachillerato en Computación con Orientación Científica, 
-me considero una persona creativa, independiente y 
-respetuosa, apasionada por la tecnología, con un fuerte 
-enfoque en la creación de páginas web y el desarrollo de 
-soluciones digitales eficientes.
-
-            </p>
-
-
-            <!-- ==========================
-                 EDUCACIÓN
-            =========================== -->
-
-            <div class="education-section">
-
-                <h3 class="education-title">
-
-                    <span class="pink-dot-small"></span>
-
-                    Educación
-
-                </h3>
-
-
-                <div class="edu-item">
-
-                    <span class="edu-years">
-                        2025-
-                        <br>
-                        <strong>Actualidad</strong>
-                    </span>
-
-                    <div class="edu-details">
-
-                        <span class="edu-degree">
-                            Bachiller en Computación con Orientación Científica
-                        </span>
-
-                        <span class="edu-school">
-                            Instituto Tecnológico de Computación (I.T.C.)
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="edu-item">
-
-                    <span class="edu-years">
-                        2022-
-                        <br>
-                        <strong>2024</strong>
-                    </span>
-
-                    <div class="edu-details">
-
-                        <span class="edu-degree">
-                            Nivel Básico
-                        </span>
-
-                        <span class="edu-school">
-                            Instituto Tecnológico de Computación (I.T.C.)
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="edu-item">
-
-                    <span class="edu-years">
-                        2015-
-                        <br>
-                        <strong>2021</strong>
-                    </span>
-
-                    <div class="edu-details">
-
-                        <span class="edu-degree">
-                            Nivel Primario
-                        </span>
-
-                        <span class="edu-school">
-                            Colegio Comercial Guatemalteco
-                        </span>
-
-                    </div>
-
-                </div>
-
+            <!-- Tarjeta 2 -->
+            <div class="skill-card-fixed">
+                <p><span class="bold-text">Aprendizaje</span><br><span class="normal-text">continuo</span></p>
             </div>
-
-
-            <!-- BOTÓN CV -->
-
-            <a
-                href="cv-ximena.pdf"
-                target="_blank"
-                class="btn-descargar-cv"
-            >
-                Ver / Descargar CV
-            </a>
-
+            <!-- Tarjeta 3 -->
+            <div class="skill-card-fixed">
+                <p><span class="bold-text">Comunicación</span><br><span class="normal-text">Efectiva</span></p>
+            </div>
+            <!-- Tarjeta 4 -->
+            <div class="skill-card-fixed">
+                <p><span class="bold-text">Creatividad e</span><br><span class="normal-text">innovación</span></p>
+            </div>
         </div>
-
     </div>
-
 </section>
 
-        <!-- SECCIÓN UNIFICADA: PROYECTOS Y CERTIFICADOS -->
+        <section id="seccion-sobre-mi" class="portfolio-container about-section">
+
+            <div class="scene-badge-dark">
+                <span class="dot recording"></span>
+                <code>[ SCENE 03: SOBRE MÍ ]</code>
+            </div>
+
+
+            <div class="about-content-wrapper">
+
+                <div class="about-left-banner">
+
+                    <div class="contact-card">
+
+                        <span class="contact-small-title">
+                            // CONTACTO
+                        </span>
+
+                        <h2>
+                            HABLEMOS
+                        </h2>
+
+                        <p>
+                            ¿Quieres ponerte en contacto conmigo?
+                        </p>
+
+
+                        
+
+                        <a
+                            href="mailto:anaxihernandez09@gmail.com"
+                            class="contact-link"
+                        >
+
+                            <span class="contact-icon">
+                                ✉
+                            </span>
+
+                            <span>
+                                Correo electrónico
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="contacto.html"
+                            class="contact-link"
+                        >
+
+                            <span class="contact-icon">
+                                →
+                            </span>
+
+                            <span>
+                                Página de contacto
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-right-content">
+
+                    <div class="about-title-container">
+
+                        <span class="about-quotes">
+                            “
+                        </span>
+
+                        <h2 class="about-title">
+                            SOBRE MÍ
+                            <span class="pink-dot-title"></span>
+                        </h2>
+
+                    </div>
+
+
+                    <p class="about-bio">
+                        Soy <strong>Ximena Hernández</strong>, 
+                        me considero una persona creativa, independiente y 
+                        respetuosa, apasionada por la tecnología, con un fuerte 
+                        enfoque en la creación de páginas web y el desarrollo de 
+                        soluciones digitales eficientes.
+                    </p>
+
+
+                    <div class="education-section">
+
+                        <h3 class="education-title">
+
+                            <span class="pink-dot-small"></span>
+
+                            Educación
+
+                        </h3>
+
+
+                        <div class="edu-item">
+
+                            <span class="edu-years">
+                                2025-
+                                <br>
+                                <strong>Actualidad</strong>
+                            </span>
+
+                            <div class="edu-details">
+
+                                <span class="edu-degree">
+                                    Bachiller en Computación con Orientación Científica
+                                </span>
+
+                                <span class="edu-school">
+                                    Instituto Tecnológico de Computación (I.T.C.)
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="edu-item">
+
+                            <span class="edu-years">
+                                2022-
+                                <br>
+                                <strong>2024</strong>
+                            </span>
+
+                            <div class="edu-details">
+
+                                <span class="edu-degree">
+                                    Nivel Básico
+                                </span>
+
+                                <span class="edu-school">
+                                    Instituto Tecnológico de Computación (I.T.C.)
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="edu-item">
+
+                            <span class="edu-years">
+                                2015-
+                                <br>
+                                <strong>2021</strong>
+                            </span>
+
+                            <div class="edu-details">
+
+                                <span class="edu-degree">
+                                    Nivel Primario
+                                </span>
+
+                                <span class="edu-school">
+                                    Colegio Comercial Guatemalteco
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
         <section id="seccion-portfolio-dual" class="dual-portfolio-section">
             <div class="scene-badge-dark">
                 <span class="dot recording"></span>
@@ -363,28 +310,27 @@ soluciones digitales eficientes.
 
             <div class="dual-container">
                 <div class="dual-sidebar">
-                    <button class="tab-btn" onclick="switchTab('proyectos')">
+                    <button class="tab-btn active" onclick="switchTab('proyectos')">
                         Programas
                     </button>
-                    <button class="tab-btn active" onclick="switchTab('certificados')">
+                    <button class="tab-btn" onclick="switchTab('certificados')">
                         Certificados
                     </button>
                 </div>
 
                 <div class="dual-content-area">
                     
-                    <!-- VISTA DE PROYECTOS -->
-                    <div id="tab-proyectos" class="tab-pane">
+                    <div id="tab-proyectos" class="tab-pane active-pane">
                         <div class="projects-title-container" style="text-align: center; width: 100%; margin-bottom: 25px;">
-                            <span class="projects-tag" style="color: #ff0055; font-weight: bold;">// MIS CREACIONES</span>
-                            <h2 class="projects-main-title" style="color: inherit; font-size: 2rem;">Proyectos Destacados</h2>
+                            <span class="projects-tag" style="color: #ff0055; font-weight: bold;">// Programas </span>
+                            <h2 class="projects-main-title" style="color: inherit; font-size: 2rem;">Programas Destacados</h2>
                         </div>
 
                         <div class="carousel-container">
                             <button class="carousel-btn-white prev-btn" onclick="scrollCarousel('proyectosCarousel', -1)">&#10094;</button>
                             
                             <div class="certificates-carousel" id="proyectosCarousel">
-                                <div class="cert-card">
+                                <div class="cert-card active-card">
                                     <div class="cert-img-box">
                                         <img src="img/NetBeans-Logo.wine.png" alt="Sistema de Gestión">
                                     </div>
@@ -416,8 +362,7 @@ soluciones digitales eficientes.
                         </div>
                     </div>
 
-                    <!-- VISTA DE CERTIFICADOS -->
-                    <div id="tab-certificados" class="tab-pane active-pane">
+                    <div id="tab-certificados" class="tab-pane">
                         <div class="projects-title-container" style="text-align: center; width: 100%; margin-bottom: 25px;">
                             <span class="projects-tag" style="color: #ff0055; font-weight: bold;">// RECONOCIMIENTOS Y LOGROS</span>
                             <h2 class="projects-main-title" style="color: inherit; font-size: 2rem;">Certificados</h2>
@@ -427,51 +372,47 @@ soluciones digitales eficientes.
                             <button class="carousel-btn-white prev-btn" onclick="scrollCarousel('certCarousel', -1)">&#10094;</button>
                             
                             <div class="certificates-carousel" id="certCarousel">
-                                <div class="cert-card">
-                                    <div class="cert-img-box">
-                                        <img src="img/acces.png" alt="Certificado Access">
+                                <div class="cert-card active-card">
+                                    <div class="cert-img-box" onclick="abrirModal('img/Access 2019 Expert.pdf.png')" title="Ver certificado en grande">
+                                        <img src="img/Access 2019 Expert.pdf.png" alt="Certificado Access">
                                     </div>
                                     <div class="cert-info">
                                         <span class="cert-tech">I.T.C. – 2026</span>
                                         <h3>Microsoft Office 2019 Access</h3>
                                         <p>Certificación oficial en Microsoft Access.</p>
-                                        <a href="Access 2019 Expert.pdf" class="btn-descargar-cert" target="_blank">Descargar Certificado</a>
                                     </div>
                                 </div>
 
                                 <div class="cert-card">
-                                    <div class="cert-img-box">
-                                        <img src="img/word.png" alt="Certificado Word">
+                                    <div class="cert-img-box" onclick="abrirModal('img/word.pdf.png')" title="Ver certificado en grande">
+                                        <img src="img/word.pdf.png" alt="Certificado Word">
                                     </div>
                                     <div class="cert-info">
                                         <span class="cert-tech">I.T.C. – 2025</span>
                                         <h3>Microsoft Office 2019 Word</h3>
                                         <p>Certificación oficial en procesamiento de textos.</p>
-                                        <a href="img/word.pdf" class="btn-descargar-cert" target="_blank">Descargar Certificado</a>
                                     </div>
                                 </div>
 
                                 <div class="cert-card">
-                                    <div class="cert-img-box">
-                                        <img src="img/excel.png" alt="Certificado Excel">
+                                    <div class="cert-img-box" onclick="abrirModal('img/certiexcel.png')" title="Ver certificado en grande">
+                                        <img src="img/certiexcel.png" alt="Certificado Excel">
                                     </div>
                                     <div class="cert-info">
-                                        <span class="cert-tech">I.T.C. – 2023</span>
+                                        <span class="cert-tech">I.T.C. – 2024</span>
                                         <h3>Microsoft Office 2019 Excel</h3>
                                         <p>Certificación oficial en hojas de cálculo avanzadas.</p>
-                                        <a href="img/excel.pdf" class="btn-descargar-cert" target="_blank">Descargar Certificado</a>
                                     </div>
                                 </div>
 
                                 <div class="cert-card">
-                                    <div class="cert-img-box">
-                                        <img src="img/power.png" alt="Certificado PowerPoint">
+                                    <div class="cert-img-box" onclick="abrirModal('img/PowerPoint 2019 Associate (1).pdf.png')" title="Ver certificado en grande">
+                                        <img src="img/PowerPoint 2019 Associate (1).pdf.png" alt="Certificado PowerPoint">
                                     </div>
                                     <div class="cert-info">
                                         <span class="cert-tech">I.T.C. – 2022</span>
                                         <h3>Microsoft Office 2019 PowerPoint</h3>
                                         <p>Certificación oficial en Microsoft PowerPoint.</p>
-                                        <a href="img/PowerPoint 2019 Associate (1).pdf" class="btn-descargar-cert" target="_blank">Descargar Certificado</a>
                                     </div>
                                 </div>
                             </div>
@@ -486,7 +427,13 @@ soluciones digitales eficientes.
 
     </div>
 
-    <!-- Archivo JS unificado -->
+    <div id="modalCertificado" class="modal-certificado" style="display: none;">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+            <img id="imgModal" src="" alt="Diploma Ampliado">
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 </html>

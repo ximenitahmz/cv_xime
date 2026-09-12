@@ -371,70 +371,47 @@ margin-left: -30px;
 }
 
 .skills-cards-container {
-display: flex;
-gap: 30px;
-justify-content: center;
-align-items: center;
-z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    margin-top: 40px;
+    overflow-x: auto;
+    padding-bottom: 10px;
 }
 
-/* Tarjeta Giratoria 3D */
-.flip-card {
-background-color: transparent;
-width: 190px;
-height: 190px;
-perspective: 1000px;
+.skill-card-fixed {
+    width: 230px;
+    height: 230px;
+    background-color: #5a2a42;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
 }
 
-.flip-card-inner {
-position: relative;
-width: 100%;
-height: 100%;
-text-align: center;
-transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-transform-style: preserve-3d;
-box-shadow: 0 15px 35px rgba(88, 40, 71, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1);
-border-radius: 40px;
+.skill-card-fixed p {
+    color: #ffffff;
+    font-size: 1.15rem;
+    line-height: 1.35;
+    margin: 0;
 }
 
-.flip-card:hover .flip-card-inner {
-transform: rotateY(180deg);
+/* Primera línea grande y en negrita */
+.skill-card-fixed .bold-text {
+    font-weight: 800;
+    font-size: 1.2rem;
 }
 
-.flip-card-front, .flip-card-back {
-position: absolute;
-width: 100%;
-height: 100%;
-backface-visibility: hidden;
-border-radius: 40px;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #582847;
-}
-
-.skill-svg-icon {
-width: 75px;
-height: 75px;
-color: #ffffff;
-}
-
-.flip-card-back {
-transform: rotateY(180deg);
-padding: 20px;
-}
-
-.flip-card-back p {
-color: #ffffff;
-font-size: 15px;
-font-family: 'Montserrat', sans-serif;
-font-weight: 400;
-text-align: center;
-line-height: 1.4;
-}
-
-.flip-card-back p .bold-text {
-font-weight: 700;
+/* Segunda línea más delgada o normal */
+.skill-card-fixed .normal-text {
+    font-weight: 300;
+    font-size: 1.1rem;
 }
 
 /* --- Barra de Navegación Superior Fija --- */
@@ -819,150 +796,249 @@ display: block;
 opacity: 1;
 }
 
+/* =========================================================
+   CARRUSEL DE CERTIFICADOS
+   Tarjeta central grande + tarjetas laterales visibles
+   ========================================================= */
+
 .carousel-container {
-position: relative;
-width: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 10px 40px;
-box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 270px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    padding: 0 35px;
+    box-sizing: border-box;
 }
 
 .certificates-carousel {
-display: flex;
-gap: 25px;
-overflow-x: auto;
-scroll-behavior: smooth;
-scroll-snap-type: x mandatory;
-width: 100%;
-padding: 20px 5px;
-scrollbar-width: none;
+    width: 100%;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    position: relative;
+    padding: 25px calc(50% - 260px);
+    box-sizing: border-box;
 }
 
 .certificates-carousel::-webkit-scrollbar {
-display: none;
+    display: none;
 }
 
+/* Tarjetas laterales */
 .cert-card {
-background: #ffffff;
-border: 2px solid #000000;
-border-radius: 22px;
-flex: 0 0 400px;
-width: 400px;
-min-width: 400px;
-scroll-snap-align: start;
-display: flex;
-align-items: center;
-padding: 20px;
-gap: 20px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 0 0 380px;
+    width: 380px;
+    height: 160px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 18px 22px;
+    box-sizing: border-box;
+    background: var(--card-bg, #ffffff);
+    border: 1.5px solid #222222;
+    border-radius: 22px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    opacity: 0.42;
+    transform: scale(0.82);
+    filter: blur(0.15px);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.45s ease,
+                box-shadow 0.45s ease,
+                filter 0.45s ease;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
 }
 
-.cert-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+/* Tarjeta central */
+.cert-card.active-card {
+    flex: 0 0 570px;
+    width: 570px;
+    height: 205px;
+    opacity: 1;
+    transform: scale(1);
+    filter: none;
+    z-index: 5;
+    border-color: #222222;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.17);
 }
 
+.cert-card:not(.active-card):hover {
+    opacity: 0.72;
+    transform: scale(0.86);
+}
+
+.cert-card.active-card:hover {
+    transform: scale(1);
+}
+
+/* Imagen del certificado */
 .cert-img-box {
-flex: 0 0 110px;
-height: 110px;
-display: flex;
-align-items: center;
-justify-content: center;
+    flex: 0 0 115px;
+    width: 115px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
 .cert-img-box img {
-width: 100%;
-height: 100%;
-object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
+.cert-img-box:hover {
+    transform: scale(1.04);
+}
+
+/* Imagen MÁS GRANDE únicamente en la tarjeta central */
+.cert-card.active-card .cert-img-box {
+    flex: 0 0 175px;
+    width: 175px;
+    height: 140px;
+    margin-right: 25px;
+}
+
+.cert-card.active-card .cert-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Información */
 .cert-info {
-display: flex;
-flex-direction: column;
-justify-content: center;
-flex-grow: 1;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .cert-tech {
-color: #6b3e46;
-font-size: 13px;
-font-weight: 700;
-margin-bottom: 4px;
-font-family: 'Montserrat', sans-serif;
+    color: #6b3e46;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .cert-info h3 {
-color: #000000;
-font-size: 1.05rem;
-font-weight: 800;
-margin-bottom: 4px;
-font-family: 'Montserrat', sans-serif;
-line-height: 1.2;
+    color: #000000;
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin: 0 0 6px 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
 }
 
 .cert-info p {
-color: #444444;
-font-size: 12px;
-margin-bottom: 12px;
-font-family: 'Montserrat', sans-serif;
-line-height: 1.3;
+    color: #444444;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.3;
 }
 
+/* Texto de la tarjeta central */
+.cert-card.active-card .cert-tech {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.cert-card.active-card .cert-info h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.cert-card.active-card .cert-info p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+/* Botón */
 .btn-descargar-cert {
-display: inline-block;
-background-color: #ff0055;
-color: #ffffff;
-padding: 8px 18px;
-border-radius: 20px;
-font-size: 12px;
-font-weight: bold;
-text-decoration: none;
-text-align: center;
-box-shadow: 0 4px 12px rgba(255, 0, 85, 0.3);
-transition: background 0.3s ease, transform 0.2s ease;
-width: fit-content;
+    display: inline-block;
+    background-color: #ff0055;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(255, 0, 85, 0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+}
+
+.cert-card.active-card .btn-descargar-cert {
+    font-size: 12px;
+    padding: 9px 20px;
 }
 
 .btn-descargar-cert:hover {
-background-color: #e0004c;
-transform: scale(1.03);
+    background-color: #e0004c;
+    transform: scale(1.03);
 }
 
+/* Flechas */
 .carousel-btn-white {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background-color: #ffffff;
-color: #ff0055;
-border: 2px solid rgba(255, 0, 85, 0.4);
-width: 45px;
-height: 45px;
-border-radius: 50%;
-font-size: 18px;
-cursor: pointer;
-z-index: 10;
-display: flex;
-align-items: center;
-justify-content: center;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    color: #ff0055;
+    border: 2px solid #222222;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.14);
+    transition: all 0.3s ease;
 }
 
 .carousel-btn-white:hover {
-background-color: #ff0055;
-color: #ffffff;
-border-color: #ff0055;
+    background-color: #ff0055;
+    color: #ffffff;
+    border-color: #ff0055;
+    transform: translateY(-50%) scale(1.08);
 }
 
 .prev-btn {
-left: 0px;
+    left: 5px;
 }
 
 .next-btn {
-right: 0px;
+    right: 5px;
 }
 
 /* =====================
@@ -996,21 +1072,97 @@ transform: scale(0.72);
 }
 
 @media (max-width: 768px) {
-.cert-card {
-flex: 0 0 85vw;
-width: 85vw;
-min-width: 85vw;
-flex-direction: column;
-align-items: center;
-text-align: center;
-padding: 15px;
-}
-.cert-info {
-align-items: center;
-}
-.carousel-btn-white {
-display: none;
-}
+    .carousel-container {
+        max-width: 100%;
+        height: 230px;
+        padding: 0 25px;
+    }
+
+    .certificates-carousel {
+        height: 210px;
+        gap: 15px;
+        padding-left: calc(50% - 170px);
+        padding-right: calc(50% - 170px);
+    }
+
+    .cert-card {
+        flex: 0 0 320px;
+        width: 320px;
+        height: 135px;
+        padding: 14px;
+        transform: scale(0.78);
+        border-radius: 18px;
+    }
+
+    .cert-card.active-card {
+        flex: 0 0 350px;
+        width: 350px;
+        height: 150px;
+        transform: scale(1);
+    }
+
+    .cert-img-box {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 90px;
+        margin-right: 14px;
+    }
+
+    .cert-card.active-card .cert-img-box {
+        flex: 0 0 110px;
+        width: 110px;
+        height: 100px;
+        margin-right: 15px;
+    }
+
+    .cert-info h3 {
+        font-size: 13px;
+    }
+
+    .cert-card.active-card .cert-info h3 {
+        font-size: 15px;
+    }
+
+    .cert-tech {
+        font-size: 10px;
+    }
+
+    .cert-card.active-card .cert-tech {
+        font-size: 11px;
+    }
+
+    .cert-info p {
+        font-size: 9px;
+    }
+
+    .cert-card.active-card .cert-info p {
+        font-size: 9px;
+    }
+
+    .btn-descargar-cert {
+        font-size: 9px;
+        padding: 6px 12px;
+    }
+
+    .cert-card.active-card .btn-descargar-cert {
+        font-size: 9px;
+        padding: 7px 14px;
+    }
+
+    .carousel-btn-white {
+        display: flex;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .prev-btn {
+        left: 2px;
+    }
+
+    .next-btn {
+        right: 2px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1054,6 +1206,86 @@ transform: scale(0.39);
 }
 }
 
+
+@media (max-width: 500px) {
+    .carousel-container {
+        height: 210px;
+        padding: 0 18px;
+    }
+
+    .certificates-carousel {
+        height: 195px;
+        gap: 10px;
+        padding-left: calc(50% - 145px);
+        padding-right: calc(50% - 145px);
+    }
+
+    .cert-card {
+        flex: 0 0 270px;
+        width: 270px;
+        height: 112px;
+        padding: 10px;
+        border-radius: 15px;
+        transform: scale(0.75);
+    }
+
+    .cert-card.active-card {
+        flex: 0 0 290px;
+        width: 290px;
+        height: 125px;
+        transform: scale(1);
+    }
+
+    .cert-img-box {
+        flex: 0 0 68px;
+        width: 68px;
+        height: 68px;
+        margin-right: 9px;
+    }
+
+    .cert-card.active-card .cert-img-box {
+        flex: 0 0 82px;
+        width: 82px;
+        height: 78px;
+        margin-right: 10px;
+    }
+
+    .cert-tech {
+        font-size: 8px;
+        margin-bottom: 3px;
+    }
+
+    .cert-card.active-card .cert-tech {
+        font-size: 9px;
+    }
+
+    .cert-info h3 {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+
+    .cert-card.active-card .cert-info h3 {
+        font-size: 11px;
+    }
+
+    .cert-info p,
+    .cert-card.active-card .cert-info p {
+        font-size: 7px;
+        margin-bottom: 5px;
+    }
+
+    .btn-descargar-cert,
+    .cert-card.active-card .btn-descargar-cert {
+        font-size: 7px;
+        padding: 5px 9px;
+    }
+
+    .carousel-btn-white {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+}
 
 /* =========================================
    NUEVOS ESTILOS: MODO CLARO / OSCURO INTEGRADOS
@@ -1477,5 +1709,678 @@ body.light-mode #seccion-portfolio-dual {
     }
     .contact-card p, .contact-link {
         font-size: 12px;
+    }
+}
+/* --- Estilos para la ventana emergente del certificado --- */
+.cert-img-box {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 12px;
+}
+
+.cert-img-box:hover {
+    transform: scale(1.05);
+}
+
+.modal-certificado {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-contenido {
+    position: relative;
+    max-width: 85%;
+    max-height: 85%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #ff0055;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+}
+
+.cerrar-modal:hover {
+    transform: scale(1.1);
+}/* =========================================================
+   PORTAFOLO PEQUEÑO EN ESQUINA
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    #seccion-inicio .main-content {
+        position: absolute !important;
+
+        /* POSICIÓN */
+        top: 80px !important;
+        left: 35px !important;
+
+        /* TAMAÑO DEL ÁREA */
+        width: 500px !important;
+        height: 250px !important;
+
+        margin: 0 !important;
+
+        /* REDUCIR TODO EL PORTAFOLO */
+        transform: scale(0.42) !important;
+        transform-origin: top left !important;
+
+        z-index: 5 !important;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #seccion-inicio .main-content {
+        position: absolute !important;
+
+        top: 75px !important;
+        left: 20px !important;
+
+        width: 500px !important;
+        height: 250px !important;
+
+        margin: 0 !important;
+
+        transform: scale(0.32) !important;
+        transform-origin: top left !important;
+
+        z-index: 5 !important;
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    #seccion-inicio .main-content {
+        top: 70px !important;
+        left: 15px !important;
+
+        transform: scale(0.25) !important;
+        transform-origin: top left !important;
+    }
+
+}/* =====================================================
+   FOTO PRINCIPAL - SIEMPRE VISIBLE
+   ===================================================== */
+
+#seccion-inicio .foto-portada-visible {
+    position: absolute;
+
+    top: 120px;
+    left: 70%;
+
+    transform: translateX(-50%);
+
+    width: 600px;
+    height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3;
+}
+
+#seccion-inicio .foto-portada-visible img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}/* =========================================================
+   AJUSTE FINAL DE LA PORTADA
+   ========================================================= */
+
+/* PORTAFOLO */
+@media (min-width: 769px) {
+
+    #seccion-inicio .main-content {
+        position: absolute !important;
+
+        top: 105px !important;
+        left: 55px !important;
+
+        width: 500px !important;
+        height: 250px !important;
+
+        margin: 0 !important;
+
+        transform: scale(0.42) !important;
+        transform-origin: top left !important;
+
+        z-index: 5 !important;
+    }
+
+
+    /* =====================================================
+       FOTO VISIBLE
+       Esta es la foto que SIEMPRE debe aparecer
+       ===================================================== */
+
+    #seccion-inicio .foto-portada-visible {
+        position: absolute !important;
+
+        top: 120px !important;
+        left: 50% !important;
+
+        width: 560px !important;
+
+        transform: translateX(-50%) !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        z-index: 3 !important;
+    }
+
+    #seccion-inicio .foto-portada-visible img {
+        width: 100% !important;
+        height: auto !important;
+
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+
+    /* =====================================================
+       FOTO SECRETA
+       NO LA MOSTRAMOS AQUÍ
+       La controla tu JavaScript con la lupa
+       ===================================================== */
+
+    #seccion-inicio .fondo-imagen-about {
+        /* Conserva el comportamiento original */
+        opacity: 0.15;
+        width: 100px;
+    }
+
+
+ /* =====================================================
+   BOTÓN ACTIVAR LUPA
+   ===================================================== */
+
+#seccion-inicio .btn-activar {
+    position: absolute !important;
+
+    top: 580px !important;
+
+    left: 52% !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 50 !important;
+
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+#seccion-inicio .btn-activar:hover {
+    transform: translateX(-50%) scale(1.05) !important;
+}
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #seccion-inicio .main-content {
+        position: absolute !important;
+
+        top: 90px !important;
+        left: 25px !important;
+
+        width: 500px !important;
+        height: 250px !important;
+
+        margin: 0 !important;
+
+        transform: scale(0.32) !important;
+        transform-origin: top left !important;
+
+        z-index: 5 !important;
+    }
+
+    #seccion-inicio .foto-portada-visible {
+        top: 120px !important;
+        left: 50% !important;
+
+        width: 480px !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+    #seccion-inicio .btn-activar {
+        top: 620px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    #seccion-inicio .main-content {
+        top: 80px !important;
+        left: 15px !important;
+
+        transform: scale(0.25) !important;
+        transform-origin: top left !important;
+    }
+
+    #seccion-inicio .foto-portada-visible {
+        top: 120px !important;
+        left: 50% !important;
+
+        width: 360px !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+    #seccion-inicio .btn-activar {
+        top: 570px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+    }
+}
+/* =========================================================
+   BOTÓN ACTIVAR LUPA - CORRECCIÓN DEFINITIVA
+   ========================================================= */
+
+#seccion-inicio {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* BOTÓN PRINCIPAL */
+#seccion-inicio #btn-activar,
+#seccion-inicio .btn-activar {
+    position: absolute !important;
+
+    /* posición */
+    top: 620px !important;
+    left: 50% !important;
+
+    /* centrado */
+    transform: translateX(-50%) !important;
+
+    /* apariencia */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: auto !important;
+    min-width: 190px !important;
+    height: auto !important;
+
+    padding: 12px 24px !important;
+
+    background: #ff0055 !important;
+    color: #ffffff !important;
+
+    border: none !important;
+    border-radius: 30px !important;
+
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    z-index: 99999 !important;
+
+    box-shadow:
+        0 5px 20px rgba(255, 0, 85, 0.45) !important;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease !important;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+#seccion-inicio #btn-activar:hover,
+#seccion-inicio .btn-activar:hover {
+    transform: translateX(-50%) scale(1.06) !important;
+
+    background-color: #e0004b !important;
+
+    box-shadow:
+        0 8px 25px rgba(255, 0, 85, 0.65) !important;
+}
+
+
+/* =========================================================
+   PORTADA - PC
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    #seccion-inicio .main-content {
+        position: absolute !important;
+
+        top: 105px !important;
+        left: 55px !important;
+
+        width: 500px !important;
+        height: 250px !important;
+
+        margin: 0 !important;
+
+        transform: scale(0.42) !important;
+        transform-origin: top left !important;
+
+        z-index: 5 !important;
+    }
+
+    #seccion-inicio .foto-portada-visible {
+        position: absolute !important;
+
+        top: 120px !important;
+        left: 50% !important;
+
+        width: 560px !important;
+        height: auto !important;
+
+        transform: translateX(-50%) !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        z-index: 3 !important;
+    }
+
+    #seccion-inicio .foto-portada-visible img {
+        width: 100% !important;
+        height: auto !important;
+
+        object-fit: contain !important;
+        display: block !important;
+    }
+
+    #seccion-inicio #btn-activar {
+        top: 680px !important;
+        left: 50% !important;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #seccion-inicio {
+        min-height: 750px !important;
+    }
+
+    #seccion-inicio .main-content {
+        position: absolute !important;
+
+        top: 90px !important;
+        left: 25px !important;
+
+        width: 500px !important;
+        height: 250px !important;
+
+        margin: 0 !important;
+
+        transform: scale(0.32) !important;
+        transform-origin: top left !important;
+
+        z-index: 5 !important;
+    }
+
+    #seccion-inicio .foto-portada-visible {
+        position: absolute !important;
+
+        top: 130px !important;
+        left: 50% !important;
+
+        width: 750px !important;
+        height: auto !important;
+
+        transform: translateX(-50%) !important;
+
+        z-index: 3 !important;
+    }
+
+    #seccion-inicio .foto-portada-visible img {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    #seccion-inicio #btn-activar {
+        top: 610px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+    #seccion-inicio #btn-activar:hover {
+        transform: translateX(-50%) scale(1.05) !important;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    #seccion-inicio {
+        min-height: 700px !important;
+    }
+
+    #seccion-inicio .main-content {
+        top: 80px !important;
+        left: 15px !important;
+
+        width: 500px !important;
+        height: 250px !important;
+
+        transform: scale(0.25) !important;
+        transform-origin: top left !important;
+    }
+
+    #seccion-inicio .foto-portada-visible {
+        top: 120px !important;
+        left: 50% !important;
+
+        width: 360px !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+    #seccion-inicio #btn-activar {
+        top: 555px !important;
+        left: 50% !important;
+
+        min-width: 165px !important;
+
+        padding: 10px 18px !important;
+
+        font-size: 11px !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+    #seccion-inicio #btn-activar:hover {
+        transform: translateX(-50%) scale(1.05) !important;
+    }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    #seccion-inicio {
+        min-height: 670px !important;
+    }
+
+    #seccion-inicio #btn-activar {
+        top: 530px !important;
+
+        min-width: 150px !important;
+
+        font-size: 10px !important;
+
+        padding: 9px 16px !important;
+    }
+}
+/* =====================================================
+   BOTÓN LUPA - CORRECCIÓN DEFINITIVA
+   ===================================================== */
+
+#seccion-inicio {
+    position: relative !important;
+}
+
+#seccion-inicio #btn-activar {
+    position: fixed !important;
+
+    top: auto !important;
+    bottom: 35px !important;
+
+    left: 50% !important;
+    right: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    padding: 12px 25px !important;
+
+    background: #ff0055 !important;
+    color: white !important;
+
+    border: none !important;
+    border-radius: 30px !important;
+
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+
+    cursor: pointer !important;
+
+    z-index: 999999 !important;
+
+    box-shadow: 0 5px 20px rgba(255, 0, 85, 0.5) !important;
+}
+
+#seccion-inicio #btn-activar:hover {
+    transform: translateX(-50%) scale(1.05) !important;
+}
+
+
+/* TABLET */
+@media (max-width: 768px) {
+
+    #seccion-inicio #btn-activar {
+        bottom: 30px !important;
+    }
+
+}
+
+
+/* CELULAR */
+@media (max-width: 500px) {
+
+    #seccion-inicio #btn-activar {
+        bottom: 20px !important;
+        padding: 10px 20px !important;
+        font-size: 11px !important;
+    }
+
+}
+/* ===== TAMAÑO FINAL DE LA IMAGEN DE PORTADA ===== */
+
+@media (min-width: 769px) {
+    #seccion-inicio .foto-portada-visible {
+        width: 700px !important;
+        top: 110px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        z-index: 10 !important;
+    }
+
+    #seccion-inicio .foto-portada-visible img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: contain !important;
     }
 }
