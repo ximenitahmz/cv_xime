@@ -2456,3 +2456,14 @@ body.light-mode #seccion-portfolio-dual {
 .cerrar-modal:hover {
     color: #ff4757; /* Destello rojo al pasar el mouse */
 }
+.skills-section-white {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 30px; /* Espacio para que no choque con la barra de navegación */
+}
+
+.skills-section-white .scene-badge-dark {
+    margin-bottom: 25px; /* Crea distancia hacia abajo para que el título quede libre */
+    align-self: center;  /* Lo centra horizontalmente */
+}
