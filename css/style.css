@@ -2467,3 +2467,22 @@ body.light-mode #seccion-portfolio-dual {
     margin-bottom: 25px; /* Crea distancia hacia abajo para que el título quede libre */
     align-self: center;  /* Lo centra horizontalmente */
 }
+/* Forzar que la sección de habilidades organice sus elementos de arriba hacia abajo */
+#seccion-habilidades {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    position: relative !important;
+    padding-top: 40px !important;
+}
+
+/* Forzar que el badge de la escena quede fijo arriba y no baje con el contenido */
+#seccion-habilidades .scene-badge-dark {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-bottom: 20px !important;
+    z-index: 10;
+}
