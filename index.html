@@ -6,14 +6,6 @@
     <title>Portafolio - Ximena Hernández</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <!-- Previene ataques de Clickjacking -->
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-
-<!-- Evita que el navegador adivine el tipo MIME (Content-Type Sniffing) -->
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-
-<!-- Política de Seguridad de Contenidos básica (CSP) -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
 </head>
 <body>
     
@@ -38,31 +30,11 @@
                 <code>[ SCENE 01: INTRODUCCIÓN ]</code>
             </div>
 
-<button 
-    id="btn-activar" 
-    class="btn-activar"
-    style="
-        position: fixed !important;
-        bottom: 30px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        z-index: 999999 !important;
-        background: #ff0055 !important;
-        color: white !important;
-        border: none !important;
-        padding: 12px 25px !important;
-        border-radius: 30px !important;
-        font-family: Arial, sans-serif !important;
-        font-size: 14px !important;
-        font-weight: bold !important;
-        cursor: pointer !important;
-    "
->
-    Activar Lupa Fotográfica
-</button>          
+            <!-- Botón limpio sin estilos en línea (los estilos se manejan en css/style.css) -->
+            <button id="btn-activar" class="btn-activar">
+                Activar Lupa Fotográfica
+            </button>          
+            
            <div id="fondo-imagen-about" class="fondo-imagen-about">
     <img src="img/exodo.png" alt="Ximena Hernández" class="imagen-revelada">
 </div>
@@ -103,8 +75,8 @@
     </div>
 
     <div class="skills-content">
-        <!-- Título principal con espacio adecuado -->
-        <div class="skills-title-wrapper" style="position: relative; margin-top: 30px;">
+        <!-- Título principal limpio -->
+        <div class="skills-title-wrapper">
             <div class="skills-quote-marks-gray">
                 <span class="q-gray">“</span><span class="q-pink">“</span>
             </div>
@@ -140,7 +112,6 @@
                 <code>[ SCENE 03: SOBRE MÍ ]</code>
             </div>
 
-
             <div class="about-content-wrapper">
 
                 <div class="about-left-banner">
@@ -159,44 +130,27 @@
                             ¿Quieres ponerte en contacto conmigo?
                         </p>
 
-
-                        
-
-                        <a
-                            href="mailto:anaxihernandez09@gmail.com"
-                            class="contact-link"
-                        >
-
+                        <a href="mailto:anaxihernandez09@gmail.com" class="contact-link">
                             <span class="contact-icon">
                                 ✉
                             </span>
-
                             <span>
                                 Correo electrónico
                             </span>
-
                         </a>
 
-
-                        <a
-                            href="contacto.html"
-                            class="contact-link"
-                        >
-
+                        <a href="contacto.html" class="contact-link">
                             <span class="contact-icon">
                                 →
                             </span>
-
                             <span>
                                 Página de contacto
                             </span>
-
                         </a>
 
                     </div>
 
                 </div>
-
 
                 <div class="about-right-content">
 
@@ -213,7 +167,6 @@
 
                     </div>
 
-
                     <p class="about-bio">
                         Soy <strong>Ximena Hernández</strong>, 
                         me considero una persona creativa, independiente y 
@@ -222,20 +175,14 @@
                         soluciones digitales eficientes.
                     </p>
 
-
                     <div class="education-section">
 
                         <h3 class="education-title">
-
                             <span class="pink-dot-small"></span>
-
                             Educación
-
                         </h3>
 
-
                         <div class="edu-item">
-
                             <span class="edu-years">
                                 2025-
                                 <br>
@@ -243,7 +190,6 @@
                             </span>
 
                             <div class="edu-details">
-
                                 <span class="edu-degree">
                                     Bachiller en Computación con Orientación Científica
                                 </span>
@@ -251,14 +197,10 @@
                                 <span class="edu-school">
                                     Instituto Tecnológico de Computación (I.T.C.)
                                 </span>
-
                             </div>
-
                         </div>
 
-
                         <div class="edu-item">
-
                             <span class="edu-years">
                                 2022-
                                 <br>
@@ -266,7 +208,6 @@
                             </span>
 
                             <div class="edu-details">
-
                                 <span class="edu-degree">
                                     Nivel Básico
                                 </span>
@@ -274,14 +215,10 @@
                                 <span class="edu-school">
                                     Instituto Tecnológico de Computación (I.T.C.)
                                 </span>
-
                             </div>
-
                         </div>
 
-
                         <div class="edu-item">
-
                             <span class="edu-years">
                                 2015-
                                 <br>
@@ -289,7 +226,6 @@
                             </span>
 
                             <div class="edu-details">
-
                                 <span class="edu-degree">
                                     Nivel Primario
                                 </span>
@@ -297,9 +233,7 @@
                                 <span class="edu-school">
                                     Colegio Comercial Guatemalteco
                                 </span>
-
                             </div>
-
                         </div>
 
                     </div>
@@ -329,9 +263,9 @@
                 <div class="dual-content-area">
                     
                     <div id="tab-proyectos" class="tab-pane active-pane">
-                        <div class="projects-title-container" style="text-align: center; width: 100%; margin-bottom: 25px;">
-                            <span class="projects-tag" style="color: #ff0055; font-weight: bold;">// Programas </span>
-                            <h2 class="projects-main-title" style="color: inherit; font-size: 2rem;">Programas Destacados</h2>
+                        <div class="projects-title-container">
+                            <span class="projects-tag">// Programas</span>
+                            <h2 class="projects-main-title">Programas Destacados</h2>
                         </div>
 
                         <div class="carousel-container">
@@ -371,9 +305,9 @@
                     </div>
 
                     <div id="tab-certificados" class="tab-pane">
-                        <div class="projects-title-container" style="text-align: center; width: 100%; margin-bottom: 25px;">
-                            <span class="projects-tag" style="color: #ff0055; font-weight: bold;">// RECONOCIMIENTOS Y LOGROS</span>
-                            <h2 class="projects-main-title" style="color: inherit; font-size: 2rem;">Certificados</h2>
+                        <div class="projects-title-container">
+                            <span class="projects-tag">// RECONOCIMIENTOS Y LOGROS</span>
+                            <h2 class="projects-main-title">Certificados</h2>
                         </div>
 
                         <div class="carousel-container">
@@ -432,7 +366,6 @@
                 </div>
             </div>
         </section>
-
     </div>
 
     <div id="modalCertificado" class="modal-certificado" style="display: none;">
