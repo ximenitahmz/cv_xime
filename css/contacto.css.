@@ -282,3 +282,22 @@
         }
 
     </style>
+.btn-activar {
+    position: fixed !important;
+    bottom: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 999999 !important;
+    background: #ff0055 !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 25px !important;
+    border-radius: 30px !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+}
