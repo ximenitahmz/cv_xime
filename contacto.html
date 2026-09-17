@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Contacto | Ximena Hernández</title>
+
+
+    <!-- FUENTES -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Montserrat:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <style>
+
+        /* ==========================
+           RESET
+        =========================== */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        body {
+
+            min-height: 100vh;
+
+            background: #0d0d0d;
+
+            color: white;
+
+            font-family: 'Montserrat', sans-serif;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 30px;
+
+        }
+
+
+        /* ==========================
+           CONTENEDOR
+        =========================== */
+
+        .contact-page {
+
+            width: 100%;
+
+            max-width: 800px;
+
+            text-align: center;
+
+        }
+
+
+        /* ==========================
+           ETIQUETA
+        =========================== */
+
+        .contact-tag {
+
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            border: 1px solid #333;
+
+            border-radius: 5px;
+
+            background: #171717;
+
+            color: #999;
+
+            font-family: 'Share Tech Mono', monospace;
+
+            font-size: 13px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .contact-tag span {
+
+            color: #ff0055;
+
+        }
+
+
+        /* ==========================
+           TÍTULO
+        =========================== */
+
+        h1 {
+
+            font-family: 'Fredoka', sans-serif;
+
+            font-size: clamp(50px, 8vw, 85px);
+
+            text-transform: uppercase;
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        h1 span {
+
+            color: #ff0055;
+
+        }
+
+
+        .description {
+
+            color: #aaa;
+
+            max-width: 550px;
+
+            margin: 0 auto 40px;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+
+        }
+
+
+        /* ==========================
+           OPCIONES
+        =========================== */
+
+        .contact-options {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: -300px;
+
+            max-width: 650px;
+
+            margin: 0 auto 40px;
+
+        }
+
+
+        .contact-box {
+
+            background: #151515;
+
+            border: 1px solid #292929;
+
+            border-radius: 20px;
+
+            padding: 30px 20px;
+
+            text-decoration: none;
+
+            color: white;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .contact-box:hover {
+
+            border-color: #ff0055;
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 10px 30px rgba(255, 0, 85, 0.15);
+
+        }
+
+
+        .contact-box-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            margin: 0 auto 15px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border-radius: 50%;
+
+            background: #ff0055;
+
+            font-size: 25px;
+
+        }
+
+
+        .contact-box h2 {
+
+            font-family: 'Fredoka', sans-serif;
+
+            font-size: 22px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .contact-box p {
+
+            color: #999;
+
+            font-size: 13px;
+
+        }
+
+
+        /* ==========================
+           VOLVER
+        =========================== */
+
+        .back-button {
+
+            display: inline-block;
+
+            background: #ff0055;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 12px 30px;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+
+        }
+
+
+        .back-button:hover {
+
+            transform: scale(1.05);
+
+        }
+
+
+        /* ==========================
+           CELULAR
+        =========================== */
+
+        @media (max-width: 600px) {
+
+            body {
+
+                padding: 20px;
+
+            }
+
+
+            .contact-options {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            h1 {
+
+                font-size: 48px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <main class="contact-page">
+
+
+        <!-- ETIQUETA -->
+
+        <div class="contact-tag">
+
+            <span>●</span>
+
+            [ SCENE 05: CONTACTO ]
+
+        </div>
+
+
+        <!-- TÍTULO -->
+
+        <h1>
+
+            HABLEMOS<span>.</span>
+
+        </h1>
+
+
+        <p class="description">
+
+            Si deseas comunicarte conmigo, puedes hacerlo
+            directamente a través de correo electrónico.
+            También puedes regresar a mi portafolio para conocer
+            más sobre mis proyectos y habilidades.
+
+        </p>
+
+
+        <!-- OPCIONES DE CONTACTO -->
+
+        <div class="contact-options">
+
+
+            
+
+            <!-- CORREO -->
+
+            <a
+                href="mailto:anaxihernandez09@gmail.com"
+                class="contact-box"
+            >
+
+                <div class="contact-box-icon">
+                    ✉
+                </div>
+
+                <h2>
+                    Correo electrónico
+                </h2>
+
+                <p>
+                    Envíame un correo
+                </p>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- VOLVER -->
+
+        <a
+            href="index.html"
+            class="back-button"
+        >
+
+            ← Volver al portafolio
+
+        </a>
+
+
+    </main>
+
+
+</body>
+
+</html>
